@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-2xl border border-gray-200">
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-8 text-center">Recipe Calculator</h1>
+
+        <div class="mb-8">
+            <label for="recipeType" class="block text-lg font-medium text-gray-700 mb-2">Select Recipe Type:</label>
+            <select id="recipeType" class="mt-1 block w-full pl-3 pr-10 py-3 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-lg rounded-md shadow-sm transition duration-150 ease-in-out">
+                <option value="">-- Please Select --</option>
+                <option value="bread">Bread Making</option>
+                <option value="dessert">Dessert Making</option>
+            </select>
+        </div>
+
+        <div id="breadSection" class="hidden p-6 rounded-xl shadow-lg border border-amber-200">
+            <h2 class="text-3xl font-bold text-amber-800 mb-6 text-center">Bread Making</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="md:col-span-2 flex justify-center mb-6">
+                    <img id="breadImage" src="./images/bread2.jpg" alt="Delicious Bread" class="w-full max-h-64 object-cover rounded-lg shadow-md transition duration-300 ease-in-out"> </div>
+                <div>
+                    <label for="doughWeight" class="block text-md font-medium text-amber-700 mb-2">Total Dough Weight (grams):</label>
+                    <input type="number" id="doughWeight" placeholder="e.g., 1000" class="mt-1 block w-full px-4 py-3 border border-amber-300 rounded-md shadow-sm focus:ring-amber-500 focus:border-amber-500 sm:text-lg transition duration-150 ease-in-out">
+                </div>
+                <div>
+                    <label for="breadType" class="block text-md font-medium text-amber-700 mb-2">Type of Bread:</label>
+                    <select id="breadType" class="mt-1 block w-full pl-3 pr-10 py-3 text-base border-amber-300 focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-lg rounded-md shadow-sm transition duration-150 ease-in-out">
+                        <option value="">-- Select Bread Type --</option>
+                        <option value="basicWhite">Basic White Bread</option>
+                        <option value="wholeWheat">Whole Wheat Bread</option>
+                        <option value="sourdough">Sourdough Bread</option>
+                        <option value="rye">Rye Bread</option>
+                        <option value="arabic">Arabic Bread</option>
+                        <option value="pita">Pita Bread</option>
+                        <option value="tortilla">Tortilla Bread</option>
+                        <option value="focaccia">Focaccia</option>
+                        <option value="pizza">Pizza Dough</option>
+                        <option value="sourdoughPizza">Sourdough Pizza Dough</option>
+                        <option value="sourdoughFocaccia">Sourdough Focaccia</option>
+                        <option value="enrichedMilk">Enriched Milk Bread</option>
+                        <option value="buns">Buns</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="calculateBreadBtn" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-75">
+                Calculate Bread Recipe
+            </button>
+
+            <div id="breadRecipeOutput" class="mt-8 p-6 bg-amber-50 rounded-lg border border-amber-200 shadow-inner text-amber-900 hidden">
+                <h3 class="text-2xl font-semibold mb-4 text-amber-800">Your Bread Recipe:</h3>
+                <ul class="list-disc list-inside space-y-2 mb-6">
+                    </ul>
+                <h3 class="text-2xl font-semibold mb-4 text-amber-800">Instructions:</h3>
+                <ol class="list-decimal list-inside space-y-2">
+                    </ol>
+            </div>
+        </div>
+
+        <div id="dessertSection" class="hidden p-6 rounded-xl shadow-lg border border-pink-200">
+            <h2 class="text-3xl font-bold text-pink-800 mb-6 text-center">Dessert Making</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="md:col-span-2 flex justify-center mb-6">
+                    <img id="dessertImage" src="/images/cake1.jpg" alt="Delicious Dessert" class="w-full max-h-64 object-cover rounded-lg shadow-md transition duration-300 ease-in-out"> </div>
+                <div>
+                    <label for="dessertWeight" class="block text-md font-medium text-pink-700 mb-2">Total Dessert Weight (grams):</label>
+                    <input type="number" id="dessertWeight" placeholder="e.g., 800" class="mt-1 block w-full px-4 py-3 border border-pink-300 rounded-md shadow-sm focus:ring-pink-500 focus:border-pink-500 sm:text-lg transition duration-150 ease-in-out">
+                </div>
+                <div>
+                    <label for="dessertType" class="block text-md font-medium text-pink-700 mb-2">Type of Dessert:</label>
+                    <select id="dessertType" class="mt-1 block w-full pl-3 pr-10 py-3 text-base border-pink-300 focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-lg rounded-md shadow-sm transition duration-150 ease-in-out">
+                        <option value="">-- Select Dessert Type --</option>
+                        <option value="cake">Cake</option>
+                        <option value="cookies">Cookies</option>
+                        <option value="brownies">Brownies</option>
+                        <option value="coffeeBuns">Coffee Buns</option>
+                        <option value="chocolateMousse">Chocolate Mousse</option>
+                        <option value="cremeBrulee">Crème Brûlée</option>
+                        <option value="doughnuts">Doughnuts</option>
+                        <option value="flan">Flan</option>
+                        <option value="gateauFondant">Gâteau Fondant au Chocolat</option>
+                        <option value="gelato">Gelato</option>
+                        <option value="japaneseCheesecake">Japanese Cheesecake</option>
+                        <option value="cheesecake">Cheesecake</option>
+                        <option value="pie">Pie</option>
+                        <option value="tiramisu">Tiramisú</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="calculateDessertBtn" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-75">
+                Calculate Dessert Recipe
+            </button>
+
+            <div id="dessertRecipeOutput" class="mt-8 p-6 bg-pink-50 rounded-lg border border-pink-200 shadow-inner text-pink-900 hidden">
+                <h3 class="text-2xl font-semibold mb-4 text-pink-800">Your Dessert Recipe:</h3>
+                <ul class="list-disc list-inside space-y-2 mb-6">
+                    </ul>
+                <h3 class="text-2xl font-semibold mb-4 text-pink-800">Instructions:</h3>
+                <ol class="list-decimal list-inside space-y-2">
+                    </ol>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

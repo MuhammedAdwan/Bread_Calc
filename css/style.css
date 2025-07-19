@@ -1,0 +1,60 @@
+/* Custom font for better aesthetics and readability */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #d0d5d2; /* Light gray background */
+}
+/* Utility class to hide sections by default, controlled by JavaScript */
+.hidden {
+    display: none;
+}
+
+/* Custom background for Bread section with subtle overlay for text readability */
+/* IMPORTANT: Adjust the URL path if your images are in a different folder relative to style.css */
+#breadSection {
+    background-image: url('../images/bread2.jpg'); /* Example: goes up one level, then into 'images' folder */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden; /* Ensures background image doesn't bleed out of rounded corners */
+}
+#breadSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85); /* Slightly transparent white overlay for readability */
+    border-radius: 1rem; /* Match parent border-radius */
+    z-index: 0;
+}
+#breadSection > * {
+    position: relative;
+    z-index: 1; /* Ensure all child content is above the overlay */
+}
+
+/* Custom background for Dessert section with subtle overlay for text readability */
+/* IMPORTANT: Adjust the URL path if your images are in a different folder relative to style.css */
+#dessertSection {
+    background-image: url('../images/cake1.jpg'); /* Example: goes up one level, then into 'images' folder */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden; /* Ensures background image doesn't bleed out of rounded corners */
+}
+#dessertSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85); /* Slightly transparent white overlay for readability */
+    border-radius: 1rem; /* Match parent border-radius */
+    z-index: 0;
+}
+#dessertSection > * {
+    position: relative;
+    z-index: 1; /* Ensure all child content is above the overlay */
+}
